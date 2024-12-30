@@ -1,0 +1,12 @@
+/* Hide scrollbar arrows */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2); /* Thumb color */
+    border-radius: 2px;
+}
+::-webkit-scrollbar-track {
+    background: transparent; /* Transparent track */
+}
+  

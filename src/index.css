@@ -66,3 +66,29 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
+
+
+ 
+::-webkit-scrollbar {
+  width: 0.4rem;
+  height: 0.5rem;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background-color: #B5B5B5;
+
+  border-radius: 4px;
+}
+ 
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* .MuiTypography-root {
+  font-family: "Exo", "Roboto", sans-serif !important;
+}
+ 
+* {
+  font-family: "Exo", "Roboto", sans-serif !important;
+}
+  */

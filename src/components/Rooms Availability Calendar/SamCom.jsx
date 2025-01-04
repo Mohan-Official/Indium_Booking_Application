@@ -4,7 +4,7 @@ import SamMatrix from '../Room Display Matrix/SamMatrix';
 import SamCapFilter from '../Filters/SamCapFilter';
 import SamFacilityFilter from '../Filters/SamFacilityFilter';
 import SamLocationFilter from '../Filters/SamLocationFilter';
-import { Box, Skeleton } from '@mui/material';
+import { Box, Button, Skeleton } from '@mui/material';
 import CalendarField from '../Calendar Field/CalendarField';
 
 export default function SamCom() {
@@ -66,102 +66,111 @@ export default function SamCom() {
   // Show skeleton loading while data is being fetched
   if (loading) {
     return (
-      <div>
-      <Box sx={{ m: 1, width: '113px' }}>
-        <Skeleton animation="wave" height='6rem' />
-      </Box>
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, p: 1 }}>
-        {/* Skeleton for "All" Button */}
-        <Skeleton
-          animation="wave"
-          variant="rectangular"
-          width={100}
-          height="3.5rem"
-          sx={{ borderRadius: 0.7 }}
-        />
-        {/* Skeleton for Capacity Filter */}
-        <Skeleton
-          animation="wave"
-          variant="rectangular"
-          width={150}
-          height="3.5rem"
-          sx={{ borderRadius: 0.7 }}
-        />
-        {/* Skeleton for Facility Filter */}
-        <Skeleton
-          animation="wave"
-          variant="rectangular"
-          width={160}
-          height="3.5rem"
-          sx={{ borderRadius: 0.7 }}
-        />
-      </Box>
-      <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 5fr', gap: 1, m: 1 }}>
-        <Box>
+      <Box sx={{ width: '100%', overflowX: 'hidden' }}>
+        <Box sx={{ m: 1, width: '113px' }}>
+          <Skeleton animation="wave" height='6rem' />
+        </Box>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, p: 1 }}>
+          {/* Skeleton for "All" Button */}
           <Skeleton
             animation="wave"
             variant="rectangular"
-            height='360px'
+            width={100}
+            height="3.5rem"
             sx={{ borderRadius: 0.7 }}
           />
-        </Box>
-        <Box>
+          {/* Skeleton for Capacity Filter */}
           <Skeleton
             animation="wave"
             variant="rectangular"
-            height='360px'
+            width={150}
+            height="3.5rem"
+            sx={{ borderRadius: 0.7 }}
+          />
+          {/* Skeleton for Facility Filter */}
+          <Skeleton
+            animation="wave"
+            variant="rectangular"
+            width={160}
+            height="3.5rem"
             sx={{ borderRadius: 0.7 }}
           />
         </Box>
+        <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 5fr', gap: 1, m: 1 }}>
+          <Box>
+            <Skeleton
+              animation="wave"
+              variant="rectangular"
+              height='360px'
+              sx={{ borderRadius: 0.7 }}
+            />
+          </Box>
+          <Box>
+            <Skeleton
+              animation="wave"
+              variant="rectangular"
+              height='360px'
+              sx={{ borderRadius: 0.7 }}
+            />
+          </Box>
+        </Box>
       </Box>
-    </div>
     );
   }
 
   return (
-    <div>
-<Box
-      sx={{
-        display: 'flex',
-        alignItems: 'center',
-        gap: 1,
-      }}
-    >
-      <SamLocationFilter
-        selectedLocation={selectedLocation}
-        onFilterChange={handleLocationFilter}
-      />
-      <CalendarField />
-    </Box>
-
-      <Box sx={{ display: 'flex' }}>
-        {/* "All" Button */}
-        <button
-          onClick={handleAllButtonClick}
-          style={{
-            margin: '10px',
-            padding: '10px 20px',
-            backgroundColor: '#000',
-            color: '#fff',
-            border: 'none',
-            borderRadius: '4px',
-            cursor: 'pointer',
-          }}
-        >
-          All
-        </button>
-        <SamCapFilter
-          selectedCapacities={selectedCapacities}
-          onFilterChange={handleCapacityFilter}
+    <Box sx={{ width: '100%', height: '100%', overflowX: 'hidden', display: 'flex', flexDirection: 'column', }}>
+      {/* Filters and Calendar */}
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: 2,
+          mb: 3,
+          flexWrap: 'wrap', // Allow wrapping for smaller screens
+        }}
+      >
+        <SamLocationFilter
+          selectedLocation={selectedLocation}
+          onFilterChange={handleLocationFilter}
         />
-        {/* Facility Filter */}
-        <SamFacilityFilter
-          selectedFacilities={selectedFacilities}
-          onFilterChange={handleFacilityFilter}
-        />
+        <CalendarField />
+        <Button sx={{position:'absolute', right: '24px', color:'white', backgroundColor:'#000000',borderRadius:'4px',padding:'15px 55px'}}>
+          New Booking
+        </Button>
       </Box>
-      {/* Pass filteredRooms to SamMatrix */}
-      <SamMatrix rooms={filteredRooms} />
-    </div>
+
+      <Box sx={{ backgroundColor:'white', borderRadius:'10px', padding:'20px' }}>
+        <Box sx={{ display: 'flex', gap: 2, mb: 3, flexWrap: 'wrap',}}>
+          <Button
+            onClick={handleAllButtonClick}
+            sx={{
+              padding: '15px 20px',
+              backgroundColor: '#000',
+              color: '#fff',
+              border: 'none',
+              borderRadius: '4px',
+              cursor: 'pointer',
+            }}
+          >
+            All
+          </Button>
+          <SamCapFilter
+            selectedCapacities={selectedCapacities}
+            onFilterChange={handleCapacityFilter}
+          />
+          <SamFacilityFilter
+            selectedFacilities={selectedFacilities}
+            onFilterChange={handleFacilityFilter}
+          />
+        </Box>
+
+        {/* Room Matrix */}
+        <Box sx={{ flexGrow: 1, overflowX: 'auto', width: '100%' }}> {/* Allow horizontal scrolling for the matrix if needed */}
+          <SamMatrix rooms={filteredRooms} />
+        </Box>
+      </Box>
+      {/* "All" Button and Filters */}
+    </Box>
   );
 }

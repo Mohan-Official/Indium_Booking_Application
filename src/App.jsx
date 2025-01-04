@@ -6,6 +6,7 @@ import { Container, styled } from '@mui/material';
 import { Route, Routes } from 'react-router-dom';
 import SamCom from './components/Rooms Availability Calendar/SamCom';
 import Layout from './components/Layout/Layout';
+import ReservationUpComing from './components/Reservation Table/ReservationUpComing';
 
 function App() {
   const DashboardContainer = styled(Box)({
@@ -78,6 +79,7 @@ function App() {
       {/* <RoomDisplaySection /> */}
         {/* <SamCom /> */}
         <Layout />
+        {/* <ReservationUpComing /> */}
     </>
   );
 }

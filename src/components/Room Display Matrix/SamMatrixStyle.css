@@ -28,6 +28,9 @@
   background-color: #ffff;
   border-top: 1px solid #e5e7eb;
   border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: start;
+  align-items: center;
 }
 
 .header-cell h3 {
@@ -40,6 +43,7 @@
   position: absolute;
   top: 0;
   left: 16rem;
+  height: 60px;
   z-index: 20;
   background-color: white;
   border-top: 1px solid #e5e7eb;

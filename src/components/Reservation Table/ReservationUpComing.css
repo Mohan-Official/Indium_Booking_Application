@@ -1,0 +1,98 @@
+.table-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    /* padding: 20px; */
+    border-radius: 0;
+    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+    overflow-y: auto; 
+    max-height: 400px;
+  }
+  
+  .reservation-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .reservation-table th,
+  .reservation-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #F4F4F4;
+    color: #5F5F5F;
+  }
+  
+  .reservation-table th {
+    background-color: #CACACA;
+    color: #1A1A1A;
+  }
+  
+  /* .reservation-table tr:nth-child(even) {
+    background-color: #FFFFFF;
+  }
+  
+  .reservation-table tr:hover {
+    background-color: #ddd;
+  }
+   */
+  
+  .reservation-table tbody {
+    display: block;
+    max-height: 205px;
+    overflow-y: auto;
+    width: 100%;
+  }
+  
+  .reservation-table td,
+  .reservation-table th {
+    width: 25%;
+  }
+  .reservation-table td
+  {
+    background-color: white;
+  }
+  
+  .reservation-table thead,
+  .reservation-table tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed; 
+  }
+  
+  .table-container h4 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  padding-bottom: 15px;
+  }
+
+  /* Add these styles to your existing CSS */
+
+/* Custom scrollbar styling */
+.table-container::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+  }
+  
+  .table-container::-webkit-scrollbar-thumb {
+    background-color: #9A9A9A; /* Color of the scrollbar */
+  }
+  
+  .table-container::-webkit-scrollbar-track {
+    background-color: #B5B5B5; /* Color of the scrollbar track */
+  }
+  
+  /* Ensure the table body scrollbar is also styled */
+  .reservation-table tbody::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+  }
+  
+  .reservation-table tbody::-webkit-scrollbar-thumb {
+    background-color: #9A9A9A; /* Color of the scrollbar */
+  }
+  
+  .reservation-table tbody::-webkit-scrollbar-track {
+    background-color: #B5B5B5; /* Color of the scrollbar track */
+  }

@@ -1,0 +1,76 @@
+/* Custom styles for the DateCalendar */
+.MuiDateCalendar-root {
+    width: 100% !important;
+    height: auto !important;
+    padding: 0 !important; /* Remove padding */
+  }
+  
+  /* Style for the calendar header (month and year) */
+  .MuiPickersCalendarHeader-root {
+    justify-content: center !important; /* Center the month/year header */
+    padding: 0px 8px 0 !important;
+    margin-top: 0 !important; /* Remove margin-top */
+    margin-bottom: 0 !important; /* Remove margin-bottom */
+    max-height: 50px !important; /* Updated max-height */
+    min-height: 40px !important;
+  }
+  
+  /* Hide the year dropdown */
+  .MuiPickersCalendarHeader-switchViewButton {
+    display: none !important;
+  }
+  
+  /* Style for the month text */
+  .MuiPickersCalendarHeader-label {
+    font-size: 15px !important; /* Adjust font size for the month text */
+  }
+  
+  /* Style for the navigation arrows */
+  .MuiPickersArrowSwitcher-root {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Remove width and padding */
+  }
+  
+  /* Style for the day cells */
+  .MuiPickersDay-root {
+    width: 36px !important; /* Adjust day cell width */
+    height: 36px !important; /* Adjust day cell height */
+    font-size: 11px !important; /* Adjust font size for dates */
+    margin: 0 !important; /* Remove margin */
+  }
+  
+  /* Style for the weekdays row */
+  .MuiDayCalendar-weekContainer {
+    justify-content: space-around !important; /* Evenly space the weekdays */
+    padding: 0px 0px !important; /* Updated padding */
+    margin: 0 !important; /* Remove margin */
+  }
+  
+  /* Style for the weekdays */
+  .MuiDayCalendar-weekDayLabel {
+    font-size: 13px !important; /* Adjust font size for weekdays */
+    width: 36px !important; /* Adjust width of weekday labels */
+    height: 36px !important; /* Adjust height of weekday labels */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Style for the selected date */
+  .MuiPickersDay-root.Mui-selected {
+    background-color: #3f51b5 !important; /* Background color for the selected date */
+    color: white !important; /* Text color for the selected date */
+    border-radius: 50% !important; /* Make the selected date circular */
+  }
+  
+  /* Adjust min-height for the slide transition */
+  .css-1n1xn3x-MuiPickersSlideTransition-root-MuiDayCalendar-slideTransition {
+    min-height: 200px !important; /* Updated min-height */
+  }
+  
+  /* Remove margin from date cells */
+  .css-4k4mmf-MuiButtonBase-root-MuiPickersDay-root {
+    margin: 0 !important; /* Remove margin */
+  }

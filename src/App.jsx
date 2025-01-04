@@ -1,9 +1,11 @@
 import { Box } from '@mui/material';
 import './App.css';
-import RoomDisplaySection from './components/RoomDisplaySection';
-import Sidebar from './components/SideBar';
+// import RoomDisplaySection from './components/RoomDisplaySection';
+import Sidebar from './components/Side Bar/SideBar';
 import { Container, styled } from '@mui/material';
 import { Route, Routes } from 'react-router-dom';
+import SamCom from './components/Rooms Availability Calendar/SamCom';
+import Layout from './components/Layout/Layout';
 
 function App() {
   const DashboardContainer = styled(Box)({
@@ -73,8 +75,9 @@ function App() {
         </DashboardSelectionContainer>
       </DashboardContainer> */}
 
-      <RoomDisplaySection />
-
+      {/* <RoomDisplaySection /> */}
+        {/* <SamCom /> */}
+        <Layout />
     </>
   );
 }

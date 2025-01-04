@@ -1,6 +1,6 @@
 import { Calendar, FileSliders, HelpCircle, Settings } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import IndiumLogo from './../assets/image 1.svg';
+import IndiumLogo from './../../assets/image 1.svg';
 import './sideBar.css';
 
 export default function Sidebar() {
@@ -38,9 +38,3 @@ export default function Sidebar() {
     </nav>
   );
 }
-
-// import React from 'react'
-
-// export default function SideBar() {
-//   return <div>SideBar</div>;
-// }
